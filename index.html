@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蓝海天 - 个人网站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e0f7fa 0%, #80deea 50%, #26c6da 100%);
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #00838f 0%, #006064 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 96, 100, 0.3);
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: rgba(0, 96, 100, 0.9);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 96, 100, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+        }
+        
+        section h2 {
+            color: #006064;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #26c6da;
+            display: inline-block;
+        }
+        
+        .timeline-item {
+            padding: 20px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            border-radius: 10px;
+            border-left: 5px solid #00838f;
+        }
+        
+        .timeline-item h3 {
+            color: #006064;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item .time {
+            color: #00838f;
+            font-weight: bold;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item p {
+            color: #555;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .award-card {
+            background: linear-gradient(135deg, #fff9c4 0%, #ffecb3 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #ffc107;
+            transition: transform 0.3s ease;
+        }
+        
+        .award-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .award-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .award-card h3 {
+            color: #f57f17;
+            margin-bottom: 8px;
+        }
+        
+        .hobbies-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .hobby-card {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            width: 180px;
+            border: 2px solid #ba68c8;
+            transition: all 0.3s ease;
+        }
+        
+        .hobby-card:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+        
+        .hobby-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .hobby-card h3 {
+            color: #7b1fa2;
+        }
+        
+        footer {
+            background: #006064;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            section {
+                padding: 25px;
+            }
+            
+            .hobby-card {
+                width: 150px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌊 蓝海天</h1>
+        <p>个人简介 · 教育 · 实习 · 荣誉 · 兴趣</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">关于我</a></li>
+            <li><a href="#education">教育背景</a></li>
+            <li><a href="#internship">实习经历</a></li>
+            <li><a href="#awards">个人奖项</a></li>
+            <li><a href="#hobbies">兴趣爱好</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="about">
+            <h2>关于我</h2>
+            <p>您好！我是蓝海天，一位充满热情的年轻人。我热爱学习，勇于挑战，始终保持着对知识的渴望和对未来的憧憬。希望通过这个网站能让您更好地了解我。</p>
+        </section>
+        
+        <section id="education">
+            <h2>📚 教育背景</h2>
+            <div class="timeline-item">
+                <h3>某某大学 - 计算机科学与技术</h3>
+                <div class="time">2022 - 2026 | 本科</div>
+                <p>主修课程：数据结构、算法设计、操作系统、计算机网络、数据库原理等。GPA：3.7/4.0</p>
+            </div>
+            <div class="timeline-item">
+                <h3>某某高中</h3>
+                <div class="time">2019 - 2022 | 高中</div>
+                <p>在校期间多次获得三好学生称号，积极参与各类学科竞赛。</p>
+            </div>
+        </section>
+        
+        <section id="internship">
+            <h2>💼 实习经历</h2>
+            <div class="timeline-item">
+                <h3>某某科技公司 - 前端开发实习生</h3>
+                <div class="time">2024.07 - 2024.09</div>
+                <p>参与公司官网重构项目，使用Vue.js框架开发响应式页面。协助完成用户交互功能优化，提升页面加载速度30%。</p>
+            </div>
+            <div class="timeline-item">
+                <h3>某某互联网公司 - 产品助理实习生</h3>
+                <div class="time">2023.07 - 2023.09</div>
+                <p>协助产品经理进行需求调研和数据分析，参与产品功能迭代讨论。负责用户反馈收集与整理工作。</p>
+            </div>
+        </section>
+        
+        <section id="awards">
+            <h2>🏆 个人奖项</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="icon">🥇</div>
+                    <h3>校级一等奖学金</h3>
+                    <p>2023-2024学年</p>
+                </div>
+                <div class="award-card">
+                    <div class="icon">🥈</div>
+                    <h3>程序设计竞赛二等奖</h3>
+                    <p>2024年</p>
+                </div>
+                <div class="award-card">
+                    <div class="icon">🥉</div>
+                    <h3>优秀学生干部</h3>
+                    <p>2023年</p>
+                </div>
+                <div class="award-card">
+                    <div class="icon">🏅</div>
+                    <h3>互联网+创新创业大赛铜奖</h3>
+                    <p>2024年</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="hobbies">
+            <h2>🎨 兴趣爱好</h2>
+            <div class="hobbies-container">
+                <div class="hobby-card">
+                    <div class="icon">📖</div>
+                    <h3>阅读</h3>
+                </div>
+                <div class="hobby-card">
+                    <div class="icon">🎵</div>
+                    <h3>音乐</h3>
+                </div>
+                <div class="hobby-card">
+                    <div class="icon">🏃</div>
+                    <h3>跑步</h3>
+                </div>
+                <div class="hobby-card">
+                    <div class="icon">🎨</div>
+                    <h3>摄影</h3>
+                </div>
+                <div class="hobby-card">
+                    <div class="icon">🎮</div>
+                    <h3>游戏</h3>
+                </div>
+                <div class="hobby-card">
+                    <div class="icon">✈️</div>
+                    <h3>旅行</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2024 蓝海天个人网站 | 感谢您的访问</p>
+    </footer>
+</body>
+</html>
